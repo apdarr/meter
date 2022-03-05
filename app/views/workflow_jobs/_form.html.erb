@@ -1,0 +1,57 @@
+<%= form_with(model: workflow_job) do |form| %>
+  <% if workflow_job.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(workflow_job.errors.count, "error") %> prohibited this workflow_job from being saved:</h2>
+
+      <ul>
+        <% workflow_job.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.text_field :status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :runner_id %>
+    <%= form.number_field :runner_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :labels %>
+    <%= form.text_field :labels %>
+  </div>
+
+  <div class="field">
+    <%= form.label :minutes %>
+    <%= form.number_field :minutes %>
+  </div>
+
+  <div class="field">
+    <%= form.label :workflow_name %>
+    <%= form.text_field :workflow_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :repo %>
+    <%= form.text_field :repo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :org %>
+    <%= form.text_field :org %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sender %>
+    <%= form.text_field :sender %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
