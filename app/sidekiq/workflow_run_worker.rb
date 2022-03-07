@@ -19,16 +19,23 @@ class WorkflowRunWorker
     name = workflow_run_params.dig("workflow_run", "name")
 
     # Repo name where it was run
-    repo = workflow_run_params.dig("repository", "name")
+    repo_name = workflow_run_params.dig("repository", "name")
+
+    # Who owns the repo for bill back purposes
+    repo_owner = workflow_run_params.dig("repository", "owner", "login")
 
     # The person that initiated the workflow
     actor = workflow_run_params.dig("workflow_run", "triggering_actor", "login")
 
     # The ID of the workflow itself 
     worfklow_id = workflow_run_params.dig("workflow", "id")
-    
+
     # Let the job complete, will eventually run this on schedule to update all workflow IDs, find their billing
     sleep(15)
 
+    response = HTTParty.get("https://api.github.com/repos/#{repo_owner}/#{repo_name}/actions/workflows/#{workflow_id}/timing", {
+        headers: {"Accept" => "application/vnd.github.v3+json","Authorization" => ENV["GH_TOKEN"]}
+        }).to_hash.dig("groups")
   end
-end
+
+  
