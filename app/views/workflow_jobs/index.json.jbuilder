@@ -1,1 +1,1 @@
-json.array! @workflow_jobs, partial: "workflow_jobs/workflow_job", as: :workflow_job
+json.array! @workflow_runs, partial: "workflow_runs/workflow_run", as: :workflow_run

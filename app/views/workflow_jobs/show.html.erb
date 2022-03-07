@@ -2,43 +2,43 @@
 
 <p>
   <strong>Status:</strong>
-  <%= @workflow_job.status %>
+  <%= @workflow_run.status %>
 </p>
 
 <p>
   <strong>Runner:</strong>
-  <%= @workflow_job.runner_id %>
+  <%= @workflow_run.runner_id %>
 </p>
 
 <p>
   <strong>Labels:</strong>
-  <%= @workflow_job.labels %>
+  <%= @workflow_run.labels %>
 </p>
 
 <p>
   <strong>Minutes:</strong>
-  <%= @workflow_job.minutes %>
+  <%= @workflow_run.minutes %>
 </p>
 
 <p>
   <strong>Workflow name:</strong>
-  <%= @workflow_job.workflow_name %>
+  <%= @workflow_run.workflow_name %>
 </p>
 
 <p>
   <strong>Repo:</strong>
-  <%= @workflow_job.repo %>
+  <%= @workflow_run.repo %>
 </p>
 
 <p>
   <strong>Org:</strong>
-  <%= @workflow_job.org %>
+  <%= @workflow_run.org %>
 </p>
 
 <p>
   <strong>Sender:</strong>
-  <%= @workflow_job.sender %>
+  <%= @workflow_run.sender %>
 </p>
 
-<%= link_to 'Edit', edit_workflow_job_path(@workflow_job) %> |
-<%= link_to 'Back', workflow_jobs_path %>
+<%= link_to 'Edit', edit_workflow_run_path(@workflow_run) %> |
+<%= link_to 'Back', workflow_runs_path %>

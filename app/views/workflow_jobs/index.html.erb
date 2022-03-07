@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Workflow Jobs</h1>
+<h1>Workflow Runs</h1>
 
 <table>
   <thead>
@@ -18,19 +18,19 @@
   </thead>
 
   <tbody>
-    <% @workflow_jobs.each do |workflow_job| %>
+    <% @workflow_runs.each do |workflow_run| %>
       <tr>
-        <td><%= workflow_job.status %></td>
-        <td><%= workflow_job.runner_id %></td>
-        <td><%= workflow_job.labels %></td>
-        <td><%= workflow_job.minutes %></td>
-        <td><%= workflow_job.workflow_name %></td>
-        <td><%= workflow_job.repo %></td>
-        <td><%= workflow_job.org %></td>
-        <td><%= workflow_job.sender %></td>
-        <td><%= link_to 'Show', workflow_job %></td>
-        <td><%= link_to 'Edit', edit_workflow_job_path(workflow_job) %></td>
-        <td><%= link_to 'Destroy', workflow_job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= workflow_run.status %></td>
+        <td><%= workflow_run.runner_id %></td>
+        <td><%= workflow_run.labels %></td>
+        <td><%= workflow_run.minutes %></td>
+        <td><%= workflow_run.workflow_name %></td>
+        <td><%= workflow_run.repo %></td>
+        <td><%= workflow_run.org %></td>
+        <td><%= workflow_run.sender %></td>
+        <td><%= link_to 'Show', workflow_run %></td>
+        <td><%= link_to 'Edit', edit_workflow_run_path(workflow_run) %></td>
+        <td><%= link_to 'Destroy', workflow_run, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -38,4 +38,4 @@
 
 <br>
 
-<%= link_to 'New Workflow Job', new_workflow_job_path %>
+<%= link_to 'New Workflow Job', new_workflow_run_path %>

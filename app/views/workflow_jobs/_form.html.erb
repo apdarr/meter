@@ -1,10 +1,10 @@
-<%= form_with(model: workflow_job) do |form| %>
-  <% if workflow_job.errors.any? %>
+<%= form_with(model: workflow_run) do |form| %>
+  <% if workflow_run.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(workflow_job.errors.count, "error") %> prohibited this workflow_job from being saved:</h2>
+      <h2><%= pluralize(workflow_run.errors.count, "error") %> prohibited this workflow_run from being saved:</h2>
 
       <ul>
-        <% workflow_job.errors.each do |error| %>
+        <% workflow_run.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>

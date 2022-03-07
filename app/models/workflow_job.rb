@@ -1,2 +1,2 @@
-class WorkflowJob < ApplicationRecord
+class WorkflowRun < ApplicationRecord
 end

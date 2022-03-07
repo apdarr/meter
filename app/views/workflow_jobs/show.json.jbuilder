@@ -1,1 +1,1 @@
-json.partial! "workflow_jobs/workflow_job", workflow_job: @workflow_job
+json.partial! "workflow_runs/workflow_run", workflow_run: @workflow_run
