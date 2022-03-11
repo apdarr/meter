@@ -28,14 +28,25 @@ class WorkflowRunWorker
     actor = workflow_run_params.dig("workflow_run", "triggering_actor", "login")
 
     # The ID of the workflow itself 
-    worfklow_id = workflow_run_params.dig("workflow", "id")
+    workflow_id = workflow_run_params.dig("workflow", "id")
 
     # Let the job complete, will eventually run this on schedule to update all workflow IDs, find their billing
-    sleep(15)
+    #sleep(15)
 
-    response = HTTParty.get("https://api.github.com/repos/#{repo_owner}/#{repo_name}/actions/workflows/#{workflow_id}/timing", {
-        headers: {"Accept" => "application/vnd.github.v3+json","Authorization" => ENV["GH_TOKEN"]}
-        }).to_hash.dig("groups")
+    #/repos/{owner}/{repo}/actions/workflows/{workflow_id}/timing
+
+    response = HTTParty.get("http://api.github.com/repos/#{repo_owner}/#{repo_name}/actions/workflows/#{workflow_id}/timing", {
+      :headers => {"Accept" => "application/vnd.github.v3+json","Authorization" => "token #{ENV['GH_TOKEN']}"}
+      }).to_hash
+    
+    response["billable"].each do |key, value|
+      tot += value[:total_ms]
+    end   
+    
+    # To-do: update the schema
+    # Save the items to the database
+    WorkflowRun.create(workflow_name: name, repo: repo_name, org: repo_owner, sender: actor, minutes: tot, workflow_id: workflow_id)
+
   end
+end
 
-  

@@ -10,15 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_07_215921) do
+ActiveRecord::Schema.define(version: 2022_03_11_132034) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "workflow_runs", force: :cascade do |t|
-    t.string "status"
-    t.integer "runner_id"
-    t.string "labels"
     t.integer "minutes"
     t.string "workflow_name"
     t.string "repo"
@@ -26,6 +23,8 @@ ActiveRecord::Schema.define(version: 2022_03_07_215921) do
     t.string "sender"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "repo_owner"
+    t.integer "workflow_id"
   end
 
 end
