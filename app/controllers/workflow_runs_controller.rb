@@ -23,7 +23,9 @@ class WorkflowRunsController < ApplicationController
   # POST /workflow_runs or /workflow_runs.json
   def create
     WorkflowRunWorker.perform_async(workflow_run_params)
-    @workflow_run = WorkflowRun.new(workflow_run_params)
+    
+    # Won't need to the ability to create a new workflow run from the app
+    # @workflow_run = WorkflowRun.new(workflow_run_params)
 
     respond_to do |format|
       if @workflow_run.save

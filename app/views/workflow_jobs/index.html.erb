@@ -5,31 +5,28 @@
 <table>
   <thead>
     <tr>
-      <th>Status</th>
-      <th>Runner</th>
-      <th>Labels</th>
       <th>Minutes</th>
-      <th>Workflow name</th>
-      <th>Repo</th>
-      <th>Org</th>
+      <th>Workflow Name</th>
       <th>Sender</th>
-      <th colspan="3"></th>
+      <th>Repo</th>
+      <th>Repo Owner</th>
+      <th>Org</th>
+      <th>Workflow ID</th>
+      <th colspan="4"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @workflow_runs.each do |workflow_run| %>
       <tr>
-        <td><%= workflow_run.status %></td>
-        <td><%= workflow_run.runner_id %></td>
-        <td><%= workflow_run.labels %></td>
         <td><%= workflow_run.minutes %></td>
         <td><%= workflow_run.workflow_name %></td>
+        <td><%= workflow_run.workflow_sender %></td>
         <td><%= workflow_run.repo %></td>
+        <td><%= workflow_run.repo_owner %></td>
         <td><%= workflow_run.org %></td>
-        <td><%= workflow_run.sender %></td>
+        <td><%= workflow_run.workflow_id %></td>
         <td><%= link_to 'Show', workflow_run %></td>
-        <td><%= link_to 'Edit', edit_workflow_run_path(workflow_run) %></td>
         <td><%= link_to 'Destroy', workflow_run, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -38,4 +35,3 @@
 
 <br>
 
-<%= link_to 'New Workflow Job', new_workflow_run_path %>

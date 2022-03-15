@@ -1,6 +1,6 @@
 require "application_system_test_case"
 
-class WorkflowJobsTest < ApplicationSystemTestCase
+class WorkflowRunsTest < ApplicationSystemTestCase
   setup do
     @workflow_run = workflow_runs(:one)
   end

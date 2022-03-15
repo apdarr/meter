@@ -39,13 +39,16 @@ class WorkflowRunWorker
       :headers => {"Accept" => "application/vnd.github.v3+json","Authorization" => "token #{ENV['GH_TOKEN']}"}
       }).to_hash
     
+    # Loop through each runtime environment and calculate the total minutes consumed
+    # Todo: calculate multipler if Windows or macOS  
+    minutes = 0
     response["billable"].each do |key, value|
-      tot += value[:total_ms]
+      minutes += value[:total_ms] / 60000
     end   
     
     # To-do: update the schema
     # Save the items to the database
-    WorkflowRun.create(workflow_name: name, repo: repo_name, org: repo_owner, sender: actor, minutes: tot, workflow_id: workflow_id)
+    WorkflowRun.create(workflow_name: name, repo: repo_name, org: repo_owner, sender: actor, minutes: minutes, workflow_id: workflow_id)
 
   end
 end
