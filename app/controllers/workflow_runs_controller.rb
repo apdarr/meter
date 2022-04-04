@@ -24,8 +24,8 @@ class WorkflowRunsController < ApplicationController
   def create
     WorkflowRunWorker.perform_async(workflow_run_params)
     
-    # Won't need to the ability to create a new workflow run from the app
-    # @workflow_run = WorkflowRun.new(workflow_run_params)
+    #Won't need to the ability to create a new workflow run from the app
+     @workflow_run = WorkflowRun.new(workflow_run_params)
 
     respond_to do |format|
       if @workflow_run.save
@@ -52,6 +52,7 @@ class WorkflowRunsController < ApplicationController
   end
 
   # DELETE /workflow_runs/1 or /workflow_runs/1.json
+  
   def destroy
     @workflow_run.destroy
 
