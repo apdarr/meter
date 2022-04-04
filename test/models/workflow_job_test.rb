@@ -1,6 +1,6 @@
 require "test_helper"
 
-class WorkflowJobTest < ActiveSupport::TestCase
+class WorkflowRunTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

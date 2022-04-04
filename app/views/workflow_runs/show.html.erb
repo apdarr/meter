@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Minutes:</strong>
+  <%= @workflow_run.minutes %>
+</p>
+
+<p>
+  <strong>Workflow Name:</strong>
+  <%= @workflow_run.workflow_name %>
+</p>
+
+<p>
+  <strong>Repo:</strong>
+  <%= @workflow_run.repo %>
+</p>
+
+<p>
+  <strong>Sender:</strong>
+  <%= @workflow_run.sender %>
+</p>
+
+<p>
+  <strong>Workflow name:</strong>
+  <%= @workflow_run.workflow_name %>
+</p>
+
+<p>
+  <strong>Repo Owner:</strong>
+  <%= @workflow_run.repo_owner %>
+</p>
+
+<%= link_to 'Edit', edit_workflow_run_path(@workflow_run) %> |
+<%= link_to 'Back', workflow_runs_path %>

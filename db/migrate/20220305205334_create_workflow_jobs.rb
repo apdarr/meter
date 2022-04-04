@@ -1,6 +1,6 @@
 class CreateWorkflowJobs < ActiveRecord::Migration[6.1]
   def change
-    create_table :workflow_jobs do |t|
+    create_table :workflow_runs do |t|
       t.string :status
       t.integer :runner_id
       t.string :labels

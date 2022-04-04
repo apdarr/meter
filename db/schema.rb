@@ -10,30 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_05_205334) do
+ActiveRecord::Schema.define(version: 2022_03_15_154939) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "playlists", force: :cascade do |t|
-    t.string "name"
-    t.string "artists"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "url"
-  end
-
-  create_table "workflow_jobs", force: :cascade do |t|
-    t.string "status"
-    t.integer "runner_id"
-    t.string "labels"
+  create_table "workflow_runs", force: :cascade do |t|
     t.integer "minutes"
     t.string "workflow_name"
     t.string "repo"
-    t.string "org"
     t.string "sender"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "repo_owner"
+    t.integer "workflow_id"
   end
 
 end

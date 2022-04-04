@@ -1,48 +1,48 @@
 require "test_helper"
 
-class WorkflowJobsControllerTest < ActionDispatch::IntegrationTest
+class WorkflowRunsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @workflow_job = workflow_jobs(:one)
+    @workflow_run = workflow_runs(:one)
   end
 
   test "should get index" do
-    get workflow_jobs_url
+    get workflow_runs_url
     assert_response :success
   end
 
   test "should get new" do
-    get new_workflow_job_url
+    get new_workflow_run_url
     assert_response :success
   end
 
-  test "should create workflow_job" do
-    assert_difference('WorkflowJob.count') do
-      post workflow_jobs_url, params: { workflow_job: { labels: @workflow_job.labels, minutes: @workflow_job.minutes, org: @workflow_job.org, repo: @workflow_job.repo, runner_id: @workflow_job.runner_id, sender: @workflow_job.sender, status: @workflow_job.status, workflow_name: @workflow_job.workflow_name } }
+  test "should create workflow_run" do
+    assert_difference('WorkflowRun.count') do
+      post workflow_runs_url, params: { workflow_run: { labels: @workflow_run.labels, minutes: @workflow_run.minutes, org: @workflow_run.org, repo: @workflow_run.repo, runner_id: @workflow_run.runner_id, sender: @workflow_run.sender, status: @workflow_run.status, workflow_name: @workflow_run.workflow_name } }
     end
 
-    assert_redirected_to workflow_job_url(WorkflowJob.last)
+    assert_redirected_to workflow_run_url(WorkflowRun.last)
   end
 
-  test "should show workflow_job" do
-    get workflow_job_url(@workflow_job)
+  test "should show workflow_run" do
+    get workflow_run_url(@workflow_run)
     assert_response :success
   end
 
   test "should get edit" do
-    get edit_workflow_job_url(@workflow_job)
+    get edit_workflow_run_url(@workflow_run)
     assert_response :success
   end
 
-  test "should update workflow_job" do
-    patch workflow_job_url(@workflow_job), params: { workflow_job: { labels: @workflow_job.labels, minutes: @workflow_job.minutes, org: @workflow_job.org, repo: @workflow_job.repo, runner_id: @workflow_job.runner_id, sender: @workflow_job.sender, status: @workflow_job.status, workflow_name: @workflow_job.workflow_name } }
-    assert_redirected_to workflow_job_url(@workflow_job)
+  test "should update workflow_run" do
+    patch workflow_run_url(@workflow_run), params: { workflow_run: { labels: @workflow_run.labels, minutes: @workflow_run.minutes, org: @workflow_run.org, repo: @workflow_run.repo, runner_id: @workflow_run.runner_id, sender: @workflow_run.sender, status: @workflow_run.status, workflow_name: @workflow_run.workflow_name } }
+    assert_redirected_to workflow_run_url(@workflow_run)
   end
 
-  test "should destroy workflow_job" do
-    assert_difference('WorkflowJob.count', -1) do
-      delete workflow_job_url(@workflow_job)
+  test "should destroy workflow_run" do
+    assert_difference('WorkflowRun.count', -1) do
+      delete workflow_run_url(@workflow_run)
     end
 
-    assert_redirected_to workflow_jobs_url
+    assert_redirected_to workflow_runs_url
   end
 end

@@ -1,2 +1,0 @@
-class WorkflowJob < ApplicationRecord
-end
