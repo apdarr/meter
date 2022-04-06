@@ -23,32 +23,6 @@ class WorkflowRunsController < ApplicationController
   # POST /workflow_runs or /workflow_runs.json
   def create
     WorkflowRunWorker.perform_async(workflow_run_params)
-    
-    #Won't need to the ability to create a new workflow run from the app
-     @workflow_run = WorkflowRun.new(workflow_run_params)
-
-    respond_to do |format|
-      if @workflow_run.save
-        format.html { redirect_to workflow_run_url(@workflow_run), notice: "Workflow job was successfully created." }
-        format.json { render :show, status: :created, location: @workflow_run }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @workflow_run.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /workflow_runs/1 or /workflow_runs/1.json
-  def update
-    respond_to do |format|
-      if @workflow_run.update(workflow_run_params)
-        format.html { redirect_to workflow_run_url(@workflow_run), notice: "Workflow job was successfully updated." }
-        format.json { render :show, status: :ok, location: @workflow_run }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @workflow_run.errors, status: :unprocessable_entity }
-      end
-    end
   end
 
   # DELETE /workflow_runs/1 or /workflow_runs/1.json
