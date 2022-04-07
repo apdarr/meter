@@ -1,0 +1,4 @@
+:schedule:
+  minutes_worker:
+    cron: '*/2 * * * *'   # Runs once per minute
+    class: MinutesWorker
