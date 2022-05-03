@@ -70,5 +70,11 @@ In configuring the payload URL, it should hit the http://1234-abcd-5678.ngrok.io
 
 The app must listen for the "Workflow runs" event. I don't recommend that you select "Send me everything" as this will create unnecessary noise in the logs and throughput on the `meter` application. 
 
+# Monitor for events 
+
+
+Once you've built the app, have it running, and configured a webhook, you can monitor the GitHub Actions workflow events that are being sent to the app.
+
+From your browser, navigate to localhost:3000/workflow_runs. Note that the  minutes usage will be displayed in miliseconds, as this is the unit that GitHub's API uses. 
 
 
