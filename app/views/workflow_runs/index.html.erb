@@ -12,16 +12,13 @@
       <li class="nav-item active">
         <a class="nav-link" href="#">Workflow Runs (Actions) </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Packages</a>
-      </li>
     </ul>
   </div>
 </nav>
 
     <div class="row">
       <h1 class="col-md-10">Workflow Runs</h1>
-      <h1 class="float-right col-md-2"><%= link_to "Download .xlsx file" %></h1>
+      <h1 class="float-right col-md-2"><%= link_to "Download .csv file" %></h1>
     </div>
 
 
@@ -34,6 +31,7 @@
         <th scope="col">Repo</th>
         <th scope="col">Repo-Owner</th>
         <th scope="col">Workflow ID</th>
+        <th scope="col">Billing Cycle</th>
         <th colspan="4"></th>
       </tr>
     </thead>
@@ -47,8 +45,9 @@
           <td><%= workflow_run.repo %></td>
           <td><%= workflow_run.repo_owner %></td>
           <td><%= workflow_run.workflow_id %></td>
+          <td><%= workflow_run.billing_cycle %></td>
           <td><%= link_to 'Show', workflow_run %></td>
-          <td><%= link_to 'Destroy', workflow_run, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
         </tr>
       <% end %>
     </tbody>
