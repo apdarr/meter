@@ -1,0 +1,625 @@
+postgres uses an image, skipping
+Building puma
+#1 [internal] load build definition from Dockerfile
+#1 sha256:28e897c8b8baf6282ab7113e431880b78f7ffacc38b131de225de50c2863059b
+#1 transferring dockerfile: 85B done
+#1 DONE 0.0s
+
+#2 [internal] load .dockerignore
+#2 sha256:3438b5a27c515c1385df1ae9a9624441cdb50d02f7eaa0d64747c79f197ebe28
+#2 transferring context: 2B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/ruby:3.0.4
+#3 sha256:59dc766741b501482a508d281dd024eb7b72adabb81ad2985149df463786aed8
+#3 DONE 0.3s
+
+#4 [ 1/11] FROM docker.io/library/ruby:3.0.4@sha256:a9237614cb7ff4146bacdf896ba27b4a3755e5e692f3ea1d959938879d28a2a6
+#4 sha256:2f75d7b83d407aacf72a2823f319be3f0de08c57e3a891137664ef79f90cfe4a
+#4 CACHED
+
+#7 [internal] load build context
+#7 sha256:59ca5d808a5798ed07e993bdd9f114b292dfdb38c126402395d14e453c27454e
+#7 transferring context: 6.83kB done
+#7 DONE 0.0s
+
+#5 [ 2/11] RUN apt-get update && apt-get install -y nodejs postgresql-client
+#5 sha256:e13da977e5aa939aef2afa8bd99a5a297febe50d8cc81f4be6d34fd0b0fa98ec
+#5 0.281 Get:1 http://security.debian.org/debian-security bullseye-security InRelease [44.1 kB]
+#5 0.286 Get:2 http://deb.debian.org/debian bullseye InRelease [116 kB]
+#5 0.356 Get:3 http://deb.debian.org/debian bullseye-updates InRelease [39.4 kB]
+#5 0.405 Get:4 http://security.debian.org/debian-security bullseye-security/main arm64 Packages [126 kB]
+#5 0.469 Get:5 http://deb.debian.org/debian bullseye/main arm64 Packages [8070 kB]
+#5 1.068 Get:6 http://deb.debian.org/debian bullseye-updates/main arm64 Packages [2596 B]
+#5 1.704 Fetched 8399 kB in 2s (5461 kB/s)
+#5 1.704 Reading package lists...
+#5 1.980 Reading package lists...
+#5 2.237 Building dependency tree...
+#5 2.305 Reading state information...
+#5 2.377 The following additional packages will be installed:
+#5 2.377   javascript-common libc-ares2 libjs-highlight.js libnode72 libuv1 nodejs-doc
+#5 2.377   postgresql-client-13 postgresql-client-common
+#5 2.378 Suggested packages:
+#5 2.378   apache2 | lighttpd | httpd npm postgresql-13 postgresql-doc-13
+#5 2.413 The following NEW packages will be installed:
+#5 2.414   javascript-common libc-ares2 libjs-highlight.js libnode72 libuv1 nodejs
+#5 2.414   nodejs-doc postgresql-client postgresql-client-13 postgresql-client-common
+#5 2.479 0 upgraded, 10 newly installed, 0 to remove and 2 not upgraded.
+#5 2.479 Need to get 12.6 MB of archives.
+#5 2.479 After this operation, 55.1 MB of additional disk space will be used.
+#5 2.479 Get:1 http://deb.debian.org/debian bullseye/main arm64 javascript-common all 11+nmu1 [6260 B]
+#5 2.503 Get:2 http://deb.debian.org/debian bullseye/main arm64 libc-ares2 arm64 1.17.1-1+deb11u1 [99.9 kB]
+#5 2.542 Get:3 http://deb.debian.org/debian bullseye/main arm64 libjs-highlight.js all 9.18.5+dfsg1-1 [397 kB]
+#5 2.610 Get:4 http://deb.debian.org/debian bullseye/main arm64 libuv1 arm64 1.40.0-2 [126 kB]
+#5 2.623 Get:5 http://deb.debian.org/debian bullseye/main arm64 libnode72 arm64 12.22.5~dfsg-2~11u1 [7676 kB]
+#5 3.090 Get:6 http://deb.debian.org/debian bullseye/main arm64 nodejs arm64 12.22.5~dfsg-2~11u1 [147 kB]
+#5 3.094 Get:7 http://deb.debian.org/debian bullseye/main arm64 nodejs-doc all 12.22.5~dfsg-2~11u1 [2545 kB]
+#5 3.197 Get:8 http://deb.debian.org/debian bullseye/main arm64 postgresql-client-common all 225 [89.3 kB]
+#5 3.197 Get:9 http://deb.debian.org/debian bullseye/main arm64 postgresql-client-13 arm64 13.5-0+deb11u1 [1475 kB]
+#5 3.261 Get:10 http://deb.debian.org/debian bullseye/main arm64 postgresql-client all 13+225 [64.8 kB]
+#5 3.359 debconf: delaying package configuration, since apt-utils is not installed
+#5 3.383 Fetched 12.6 MB in 1s (14.9 MB/s)
+#5 3.404 Selecting previously unselected package javascript-common.
+#5 3.404 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 22732 files and directories currently installed.)
+#5 3.416 Preparing to unpack .../0-javascript-common_11+nmu1_all.deb ...
+#5 3.425 Unpacking javascript-common (11+nmu1) ...
+#5 3.447 Selecting previously unselected package libc-ares2:arm64.
+#5 3.449 Preparing to unpack .../1-libc-ares2_1.17.1-1+deb11u1_arm64.deb ...
+#5 3.453 Unpacking libc-ares2:arm64 (1.17.1-1+deb11u1) ...
+#5 3.476 Selecting previously unselected package libjs-highlight.js.
+#5 3.477 Preparing to unpack .../2-libjs-highlight.js_9.18.5+dfsg1-1_all.deb ...
+#5 3.480 Unpacking libjs-highlight.js (9.18.5+dfsg1-1) ...
+#5 3.532 Selecting previously unselected package libuv1:arm64.
+#5 3.533 Preparing to unpack .../3-libuv1_1.40.0-2_arm64.deb ...
+#5 3.535 Unpacking libuv1:arm64 (1.40.0-2) ...
+#5 3.562 Selecting previously unselected package libnode72:arm64.
+#5 3.564 Preparing to unpack .../4-libnode72_12.22.5~dfsg-2~11u1_arm64.deb ...
+#5 3.566 Unpacking libnode72:arm64 (12.22.5~dfsg-2~11u1) ...
+#5 4.077 Selecting previously unselected package nodejs.
+#5 4.078 Preparing to unpack .../5-nodejs_12.22.5~dfsg-2~11u1_arm64.deb ...
+#5 4.081 Unpacking nodejs (12.22.5~dfsg-2~11u1) ...
+#5 4.109 Selecting previously unselected package nodejs-doc.
+#5 4.110 Preparing to unpack .../6-nodejs-doc_12.22.5~dfsg-2~11u1_all.deb ...
+#5 4.113 Unpacking nodejs-doc (12.22.5~dfsg-2~11u1) ...
+#5 4.264 Selecting previously unselected package postgresql-client-common.
+#5 4.265 Preparing to unpack .../7-postgresql-client-common_225_all.deb ...
+#5 4.267 Unpacking postgresql-client-common (225) ...
+#5 4.292 Selecting previously unselected package postgresql-client-13.
+#5 4.293 Preparing to unpack .../8-postgresql-client-13_13.5-0+deb11u1_arm64.deb ...
+#5 4.295 Unpacking postgresql-client-13 (13.5-0+deb11u1) ...
+#5 4.435 Selecting previously unselected package postgresql-client.
+#5 4.436 Preparing to unpack .../9-postgresql-client_13+225_all.deb ...
+#5 4.439 Unpacking postgresql-client (13+225) ...
+#5 4.466 Setting up postgresql-client-common (225) ...
+#5 4.477 Setting up javascript-common (11+nmu1) ...
+#5 4.493 Setting up libc-ares2:arm64 (1.17.1-1+deb11u1) ...
+#5 4.498 Setting up postgresql-client-13 (13.5-0+deb11u1) ...
+#5 4.839 update-alternatives: using /usr/share/postgresql/13/man/man1/psql.1.gz to provide /usr/share/man/man1/psql.1.gz (psql.1.gz) in auto mode
+#5 4.859 Setting up libuv1:arm64 (1.40.0-2) ...
+#5 4.864 Setting up libjs-highlight.js (9.18.5+dfsg1-1) ...
+#5 4.868 Setting up postgresql-client (13+225) ...
+#5 4.871 Setting up libnode72:arm64 (12.22.5~dfsg-2~11u1) ...
+#5 4.876 Setting up nodejs-doc (12.22.5~dfsg-2~11u1) ...
+#5 4.880 Setting up nodejs (12.22.5~dfsg-2~11u1) ...
+#5 4.886 update-alternatives: using /usr/bin/nodejs to provide /usr/bin/js (js) in auto mode
+#5 4.889 Processing triggers for libc-bin (2.31-13+deb11u3) ...
+#5 DONE 5.0s
+
+#6 [ 3/11] WORKDIR /meter
+#6 sha256:bc18be5ea1e9bebe604f0d798f5bddcd2aead9b8eb07340f6d07e75f3d2ad026
+#6 DONE 0.0s
+
+#8 [ 4/11] COPY Gemfile /meter/Gemfile
+#8 sha256:66fa816cd6132dad37b30eefc656e467829897376b84e64323de8fd78fab9031
+#8 DONE 0.0s
+
+#9 [ 5/11] COPY Gemfile.lock /meter/Gemfile.lock
+#9 sha256:7d48189004371140c6512505aa26f4eedce36d31d8639528fe843c2bb3558787
+#9 DONE 0.0s
+
+#10 [ 6/11] RUN bundle install
+#10 sha256:5f533d99e1de0f8a69688dda4cf6da6451d98bbd2232cdd5ed77e988dabc1df8
+#10 1.500 Fetching gem metadata from https://rubygems.org/..........
+#10 4.223 Fetching rake 13.0.6
+#10 4.331 Installing rake 13.0.6
+#10 4.354 Fetching concurrent-ruby 1.1.9
+#10 4.354 Fetching minitest 5.15.0
+#10 4.355 Fetching zeitwerk 2.5.4
+#10 4.355 Fetching builder 3.2.4
+#10 4.446 Installing zeitwerk 2.5.4
+#10 4.453 Installing builder 3.2.4
+#10 4.460 Fetching erubi 1.10.0
+#10 4.469 Installing minitest 5.15.0
+#10 4.482 Fetching racc 1.6.0
+#10 4.487 Fetching crass 1.0.6
+#10 4.531 Installing concurrent-ruby 1.1.9
+#10 4.552 Installing erubi 1.10.0
+#10 4.562 Fetching rack 2.2.3
+#10 4.572 Fetching nio4r 2.5.8
+#10 4.591 Installing racc 1.6.0 with native extensions
+#10 4.591 Installing crass 1.0.6
+#10 4.603 Fetching websocket-extensions 0.1.5
+#10 4.689 Installing websocket-extensions 0.1.5
+#10 4.705 Fetching marcel 1.0.2
+#10 4.708 Installing nio4r 2.5.8 with native extensions
+#10 4.710 Installing rack 2.2.3
+#10 4.795 Fetching mini_mime 1.1.2
+#10 4.819 Installing marcel 1.0.2
+#10 4.833 Fetching public_suffix 4.0.6
+#10 4.893 Installing mini_mime 1.1.2
+#10 4.910 Fetching execjs 2.8.1
+#10 4.965 Installing public_suffix 4.0.6
+#10 4.990 Fetching bindex 0.8.1
+#10 5.012 Installing execjs 2.8.1
+#10 5.025 Fetching msgpack 1.4.5
+#10 5.079 Installing bindex 0.8.1 with native extensions
+#10 5.160 Installing msgpack 1.4.5 with native extensions
+#10 5.314 Fetching popper_js 2.9.3
+#10 5.398 Installing popper_js 2.9.3
+#10 5.414 Fetching method_source 1.0.0
+#10 5.417 Fetching thor 1.2.1
+#10 5.503 Installing method_source 1.0.0
+#10 5.510 Fetching ffi 1.15.5
+#10 5.520 Installing thor 1.2.1
+#10 5.531 Fetching tilt 2.0.10
+#10 5.654 Installing tilt 2.0.10
+#10 5.721 Using bundler 2.2.33
+#10 5.726 Fetching byebug 11.1.3
+#10 5.808 Installing ffi 1.15.5 with native extensions
+#10 5.856 Installing byebug 11.1.3 with native extensions
+#10 7.026 Fetching matrix 0.4.2
+#10 7.098 Fetching regexp_parser 2.2.1
+#10 7.135 Installing matrix 0.4.2
+#10 7.140 Fetching childprocess 4.1.0
+#10 7.201 Installing regexp_parser 2.2.1
+#10 7.214 Fetching connection_pool 2.2.5
+#10 7.222 Installing childprocess 4.1.0
+#10 7.232 Fetching dotenv 2.7.6
+#10 7.294 Installing connection_pool 2.2.5
+#10 7.299 Fetching e2mmap 0.1.0
+#10 7.308 Installing dotenv 2.7.6
+#10 7.312 Fetching raabro 1.4.0
+#10 7.393 Installing e2mmap 0.1.0
+#10 7.393 Installing raabro 1.4.0
+#10 7.403 Fetching mime-types-data 3.2021.1115
+#10 7.404 Fetching multi_xml 0.6.0
+#10 7.485 Installing multi_xml 0.6.0
+#10 7.491 Fetching rb-fsevent 0.11.1
+#10 7.551 Installing mime-types-data 3.2021.1115
+#10 7.570 Fetching pg 1.3.3
+#10 7.622 Installing rb-fsevent 0.11.1
+#10 7.632 Fetching redis 4.6.0
+#10 7.727 Installing pg 1.3.3 with native extensions
+#10 7.751 Installing redis 4.6.0
+#10 7.761 Using rexml 3.2.5
+#10 7.762 Fetching rubyzip 2.3.2
+#10 7.846 Fetching spring 3.1.1
+#10 7.850 Installing rubyzip 2.3.2
+#10 7.860 Fetching i18n 1.10.0
+#10 7.936 Installing spring 3.1.1
+#10 7.944 Fetching tzinfo 2.0.4
+#10 7.980 Installing i18n 1.10.0
+#10 7.989 Fetching websocket-driver 0.7.5
+#10 8.064 Installing tzinfo 2.0.4
+#10 8.076 Fetching rack-test 1.1.0
+#10 8.095 Installing websocket-driver 0.7.5 with native extensions
+#10 8.168 Installing rack-test 1.1.0
+#10 8.181 Fetching sprockets 4.0.3
+#10 8.300 Fetching rack-mini-profiler 2.3.4
+#10 8.303 Installing sprockets 4.0.3
+#10 8.319 Fetching mail 2.7.1
+#10 8.530 Installing mail 2.7.1
+#10 8.573 Fetching addressable 2.8.0
+#10 8.689 Installing addressable 2.8.0
+#10 8.693 Installing rack-mini-profiler 2.3.4
+#10 8.722 Fetching autoprefixer-rails 10.4.0.0
+#10 8.738 Fetching nokogiri 1.13.5 (aarch64-linux)
+#10 9.143 Installing autoprefixer-rails 10.4.0.0
+#10 9.259 Fetching puma 5.6.2
+#10 9.425 Installing nokogiri 1.13.5 (aarch64-linux)
+#10 9.486 Installing puma 5.6.2 with native extensions
+#10 9.757 Fetching thwait 0.2.0
+#10 9.849 Installing thwait 0.2.0
+#10 9.853 Fetching mime-types 3.4.1
+#10 9.964 Installing mime-types 3.4.1
+#10 9.979 Fetching sidekiq 6.4.1
+#10 10.13 Installing sidekiq 6.4.1
+#10 10.16 Fetching bootsnap 1.10.3
+#10 10.26 Installing bootsnap 1.10.3 with native extensions
+#10 10.68 Fetching selenium-webdriver 4.1.0
+#10 10.81 Installing selenium-webdriver 4.1.0
+#10 10.83 Fetching activesupport 6.1.4.6
+#10 10.97 Installing activesupport 6.1.4.6
+#10 11.00 Fetching et-orbi 1.2.7
+#10 11.08 Installing et-orbi 1.2.7
+#10 11.09 Fetching loofah 2.14.0
+#10 11.26 Installing loofah 2.14.0
+#10 11.28 Fetching xpath 3.2.0
+#10 11.38 Installing xpath 3.2.0
+#10 11.38 Fetching httparty 0.20.0
+#10 11.41 Fetching webdrivers 5.0.0
+#10 11.49 Installing httparty 0.20.0
+#10 11.51 Fetching rails-dom-testing 2.0.3
+#10 11.52 Installing webdrivers 5.0.0
+#10 11.53 Fetching globalid 1.0.0
+#10 11.58 Installing rails-dom-testing 2.0.3
+#10 11.59 Fetching activemodel 6.1.4.6
+#10 11.62 Installing globalid 1.0.0
+#10 11.62 Fetching fugit 1.5.3
+#10 11.70 Installing activemodel 6.1.4.6
+#10 11.71 Installing fugit 1.5.3
+#10 11.72 Fetching rails-html-sanitizer 1.4.2
+#10 11.73 Fetching capybara 3.36.0
+#10 11.81 Installing rails-html-sanitizer 1.4.2
+#10 11.81 Fetching sassc 2.4.0
+#10 11.90 Fetching rb-inotify 0.10.1
+#10 11.90 Installing capybara 3.36.0
+#10 11.95 Fetching activejob 6.1.4.6
+#10 11.98 Installing sassc 2.4.0 with native extensions
+#10 12.00 Installing rb-inotify 0.10.1
+#10 12.02 Fetching rufus-scheduler 3.8.1
+#10 12.03 Installing activejob 6.1.4.6
+#10 12.06 Fetching activerecord 6.1.4.6
+#10 12.13 Installing rufus-scheduler 3.8.1
+#10 12.15 Fetching actionview 6.1.4.6
+#10 12.24 Installing activerecord 6.1.4.6
+#10 12.30 Installing actionview 6.1.4.6
+#10 12.32 Fetching listen 3.7.1
+#10 12.34 Fetching sidekiq-scheduler 3.1.1
+#10 12.42 Installing listen 3.7.1
+#10 12.43 Installing sidekiq-scheduler 3.1.1
+#10 12.47 Fetching jbuilder 2.11.5
+#10 12.47 Fetching actionpack 6.1.4.6
+#10 12.57 Installing jbuilder 2.11.5
+#10 12.62 Installing actionpack 6.1.4.6
+#10 12.65 Fetching actioncable 6.1.4.6
+#10 12.65 Fetching activestorage 6.1.4.6
+#10 12.77 Installing actioncable 6.1.4.6
+#10 12.78 Fetching actionmailer 6.1.4.6
+#10 12.79 Installing activestorage 6.1.4.6
+#10 12.80 Fetching railties 6.1.4.6
+#10 12.87 Installing actionmailer 6.1.4.6
+#10 12.87 Fetching sprockets-rails 3.4.2
+#10 12.95 Installing sprockets-rails 3.4.2
+#10 12.96 Fetching actionmailbox 6.1.4.6
+#10 12.98 Installing railties 6.1.4.6
+#10 13.03 Fetching actiontext 6.1.4.6
+#10 13.05 Installing actionmailbox 6.1.4.6
+#10 13.06 Fetching dotenv-rails 2.7.6
+#10 13.11 Installing actiontext 6.1.4.6
+#10 13.12 Fetching web-console 4.2.0
+#10 13.14 Installing dotenv-rails 2.7.6
+#10 13.14 Fetching rails 6.1.4.6
+#10 13.20 Installing web-console 4.2.0
+#10 13.23 Installing rails 6.1.4.6
+#10 42.29 Fetching sassc-rails 2.1.2
+#10 42.41 Installing sassc-rails 2.1.2
+#10 42.42 Fetching bootstrap 5.1.3
+#10 42.42 Fetching sass-rails 6.0.0
+#10 42.50 Installing sass-rails 6.0.0
+#10 42.56 Installing bootstrap 5.1.3
+#10 42.59 Bundle complete! 20 Gemfile dependencies, 90 gems now installed.
+#10 42.59 Use `bundle info [gemname]` to see where a bundled gem is installed.
+#10 42.59 Post-install message from httparty:
+#10 42.59 When you HTTParty, you must party hard!
+#10 42.59 Post-install message from rubyzip:
+#10 42.59 RubyZip 3.0 is coming!
+#10 42.59 **********************
+#10 42.59 
+#10 42.59 The public API of some Rubyzip classes has been modernized to use named
+#10 42.59 parameters for optional arguments. Please check your usage of the
+#10 42.59 following classes:
+#10 42.59   * `Zip::File`
+#10 42.59   * `Zip::Entry`
+#10 42.59   * `Zip::InputStream`
+#10 42.59   * `Zip::OutputStream`
+#10 42.59 
+#10 42.59 Please ensure that your Gemfiles and .gemspecs are suitably restrictive
+#10 42.59 to avoid an unexpected breakage when 3.0 is released (e.g. ~> 2.3.0).
+#10 42.59 See https://github.com/rubyzip/rubyzip for details. The Changelog also
+#10 42.59 lists other enhancements and bugfixes that have been implemented since
+#10 42.59 version 2.3.0.
+#10 DONE 42.7s
+
+#11 [ 7/11] RUN ruby -v
+#11 sha256:1a6ab71efd06e719da50a4ce025ab77851b1e1274a095f7d8806b048e6db09bc
+#11 0.340 ruby 3.0.4p208 (2022-04-12 revision 3fa771dded) [aarch64-linux]
+#11 DONE 0.3s
+
+#12 [ 8/11] RUN cat Gemfile.lock
+#12 sha256:4ff5e8cacc38acfad02ffc655510dbda012ac8c722dc0df5a3f5f576f8cdb446
+#12 0.308 GEM
+#12 0.308   remote: https://rubygems.org/
+#12 0.308   specs:
+#12 0.308     actioncable (6.1.4.6)
+#12 0.308       actionpack (= 6.1.4.6)
+#12 0.308       activesupport (= 6.1.4.6)
+#12 0.308       nio4r (~> 2.0)
+#12 0.308       websocket-driver (>= 0.6.1)
+#12 0.308     actionmailbox (6.1.4.6)
+#12 0.308       actionpack (= 6.1.4.6)
+#12 0.308       activejob (= 6.1.4.6)
+#12 0.308       activerecord (= 6.1.4.6)
+#12 0.308       activestorage (= 6.1.4.6)
+#12 0.308       activesupport (= 6.1.4.6)
+#12 0.308       mail (>= 2.7.1)
+#12 0.308     actionmailer (6.1.4.6)
+#12 0.308       actionpack (= 6.1.4.6)
+#12 0.308       actionview (= 6.1.4.6)
+#12 0.308       activejob (= 6.1.4.6)
+#12 0.308       activesupport (= 6.1.4.6)
+#12 0.308       mail (~> 2.5, >= 2.5.4)
+#12 0.308       rails-dom-testing (~> 2.0)
+#12 0.308     actionpack (6.1.4.6)
+#12 0.308       actionview (= 6.1.4.6)
+#12 0.308       activesupport (= 6.1.4.6)
+#12 0.308       rack (~> 2.0, >= 2.0.9)
+#12 0.308       rack-test (>= 0.6.3)
+#12 0.308       rails-dom-testing (~> 2.0)
+#12 0.308       rails-html-sanitizer (~> 1.0, >= 1.2.0)
+#12 0.308     actiontext (6.1.4.6)
+#12 0.308       actionpack (= 6.1.4.6)
+#12 0.308       activerecord (= 6.1.4.6)
+#12 0.308       activestorage (= 6.1.4.6)
+#12 0.308       activesupport (= 6.1.4.6)
+#12 0.308       nokogiri (>= 1.8.5)
+#12 0.308     actionview (6.1.4.6)
+#12 0.308       activesupport (= 6.1.4.6)
+#12 0.308       builder (~> 3.1)
+#12 0.308       erubi (~> 1.4)
+#12 0.308       rails-dom-testing (~> 2.0)
+#12 0.308       rails-html-sanitizer (~> 1.1, >= 1.2.0)
+#12 0.308     activejob (6.1.4.6)
+#12 0.308       activesupport (= 6.1.4.6)
+#12 0.308       globalid (>= 0.3.6)
+#12 0.308     activemodel (6.1.4.6)
+#12 0.308       activesupport (= 6.1.4.6)
+#12 0.308     activerecord (6.1.4.6)
+#12 0.308       activemodel (= 6.1.4.6)
+#12 0.308       activesupport (= 6.1.4.6)
+#12 0.308     activestorage (6.1.4.6)
+#12 0.308       actionpack (= 6.1.4.6)
+#12 0.308       activejob (= 6.1.4.6)
+#12 0.308       activerecord (= 6.1.4.6)
+#12 0.308       activesupport (= 6.1.4.6)
+#12 0.308       marcel (~> 1.0.0)
+#12 0.308       mini_mime (>= 1.1.0)
+#12 0.308     activesupport (6.1.4.6)
+#12 0.308       concurrent-ruby (~> 1.0, >= 1.0.2)
+#12 0.308       i18n (>= 1.6, < 2)
+#12 0.308       minitest (>= 5.1)
+#12 0.308       tzinfo (~> 2.0)
+#12 0.308       zeitwerk (~> 2.3)
+#12 0.308     addressable (2.8.0)
+#12 0.308       public_suffix (>= 2.0.2, < 5.0)
+#12 0.308     autoprefixer-rails (10.4.0.0)
+#12 0.308       execjs (~> 2)
+#12 0.308     bindex (0.8.1)
+#12 0.308     bootsnap (1.10.3)
+#12 0.308       msgpack (~> 1.2)
+#12 0.308     bootstrap (5.1.3)
+#12 0.308       autoprefixer-rails (>= 9.1.0)
+#12 0.308       popper_js (>= 2.9.3, < 3)
+#12 0.308       sassc-rails (>= 2.0.0)
+#12 0.308     builder (3.2.4)
+#12 0.308     byebug (11.1.3)
+#12 0.308     capybara (3.36.0)
+#12 0.308       addressable
+#12 0.308       matrix
+#12 0.308       mini_mime (>= 0.1.3)
+#12 0.308       nokogiri (~> 1.8)
+#12 0.308       rack (>= 1.6.0)
+#12 0.308       rack-test (>= 0.6.3)
+#12 0.308       regexp_parser (>= 1.5, < 3.0)
+#12 0.308       xpath (~> 3.2)
+#12 0.308     childprocess (4.1.0)
+#12 0.308     concurrent-ruby (1.1.9)
+#12 0.308     connection_pool (2.2.5)
+#12 0.308     crass (1.0.6)
+#12 0.308     dotenv (2.7.6)
+#12 0.308     dotenv-rails (2.7.6)
+#12 0.308       dotenv (= 2.7.6)
+#12 0.308       railties (>= 3.2)
+#12 0.308     e2mmap (0.1.0)
+#12 0.308     erubi (1.10.0)
+#12 0.308     et-orbi (1.2.7)
+#12 0.308       tzinfo
+#12 0.308     execjs (2.8.1)
+#12 0.308     ffi (1.15.5)
+#12 0.308     fugit (1.5.3)
+#12 0.308       et-orbi (~> 1, >= 1.2.7)
+#12 0.308       raabro (~> 1.4)
+#12 0.308     globalid (1.0.0)
+#12 0.308       activesupport (>= 5.0)
+#12 0.308     httparty (0.20.0)
+#12 0.308       mime-types (~> 3.0)
+#12 0.308       multi_xml (>= 0.5.2)
+#12 0.308     i18n (1.10.0)
+#12 0.308       concurrent-ruby (~> 1.0)
+#12 0.308     jbuilder (2.11.5)
+#12 0.308       actionview (>= 5.0.0)
+#12 0.308       activesupport (>= 5.0.0)
+#12 0.308     listen (3.7.1)
+#12 0.308       rb-fsevent (~> 0.10, >= 0.10.3)
+#12 0.308       rb-inotify (~> 0.9, >= 0.9.10)
+#12 0.308     loofah (2.14.0)
+#12 0.308       crass (~> 1.0.2)
+#12 0.308       nokogiri (>= 1.5.9)
+#12 0.308     mail (2.7.1)
+#12 0.308       mini_mime (>= 0.1.1)
+#12 0.308     marcel (1.0.2)
+#12 0.308     matrix (0.4.2)
+#12 0.308     method_source (1.0.0)
+#12 0.308     mime-types (3.4.1)
+#12 0.308       mime-types-data (~> 3.2015)
+#12 0.308     mime-types-data (3.2021.1115)
+#12 0.308     mini_mime (1.1.2)
+#12 0.308     minitest (5.15.0)
+#12 0.308     msgpack (1.4.5)
+#12 0.308     multi_xml (0.6.0)
+#12 0.308     nio4r (2.5.8)
+#12 0.308     nokogiri (1.13.5-aarch64-linux)
+#12 0.308       racc (~> 1.4)
+#12 0.308     nokogiri (1.13.5-arm64-darwin)
+#12 0.308       racc (~> 1.4)
+#12 0.308     nokogiri (1.13.5-x86_64-linux)
+#12 0.308       racc (~> 1.4)
+#12 0.308     pg (1.3.3)
+#12 0.308     popper_js (2.9.3)
+#12 0.308     public_suffix (4.0.6)
+#12 0.308     puma (5.6.2)
+#12 0.308       nio4r (~> 2.0)
+#12 0.308     raabro (1.4.0)
+#12 0.308     racc (1.6.0)
+#12 0.308     rack (2.2.3)
+#12 0.308     rack-mini-profiler (2.3.4)
+#12 0.308       rack (>= 1.2.0)
+#12 0.308     rack-test (1.1.0)
+#12 0.308       rack (>= 1.0, < 3)
+#12 0.308     rails (6.1.4.6)
+#12 0.308       actioncable (= 6.1.4.6)
+#12 0.308       actionmailbox (= 6.1.4.6)
+#12 0.308       actionmailer (= 6.1.4.6)
+#12 0.308       actionpack (= 6.1.4.6)
+#12 0.308       actiontext (= 6.1.4.6)
+#12 0.308       actionview (= 6.1.4.6)
+#12 0.308       activejob (= 6.1.4.6)
+#12 0.308       activemodel (= 6.1.4.6)
+#12 0.308       activerecord (= 6.1.4.6)
+#12 0.308       activestorage (= 6.1.4.6)
+#12 0.308       activesupport (= 6.1.4.6)
+#12 0.308       bundler (>= 1.15.0)
+#12 0.308       railties (= 6.1.4.6)
+#12 0.308       sprockets-rails (>= 2.0.0)
+#12 0.308     rails-dom-testing (2.0.3)
+#12 0.308       activesupport (>= 4.2.0)
+#12 0.308       nokogiri (>= 1.6)
+#12 0.308     rails-html-sanitizer (1.4.2)
+#12 0.308       loofah (~> 2.3)
+#12 0.308     railties (6.1.4.6)
+#12 0.308       actionpack (= 6.1.4.6)
+#12 0.308       activesupport (= 6.1.4.6)
+#12 0.308       method_source
+#12 0.308       rake (>= 0.13)
+#12 0.308       thor (~> 1.0)
+#12 0.308     rake (13.0.6)
+#12 0.308     rb-fsevent (0.11.1)
+#12 0.308     rb-inotify (0.10.1)
+#12 0.308       ffi (~> 1.0)
+#12 0.308     redis (4.6.0)
+#12 0.308     regexp_parser (2.2.1)
+#12 0.308     rexml (3.2.5)
+#12 0.308     rubyzip (2.3.2)
+#12 0.308     rufus-scheduler (3.8.1)
+#12 0.308       fugit (~> 1.1, >= 1.1.6)
+#12 0.308     sass-rails (6.0.0)
+#12 0.308       sassc-rails (~> 2.1, >= 2.1.1)
+#12 0.308     sassc (2.4.0)
+#12 0.308       ffi (~> 1.9)
+#12 0.308     sassc-rails (2.1.2)
+#12 0.308       railties (>= 4.0.0)
+#12 0.308       sassc (>= 2.0)
+#12 0.308       sprockets (> 3.0)
+#12 0.308       sprockets-rails
+#12 0.308       tilt
+#12 0.308     selenium-webdriver (4.1.0)
+#12 0.308       childprocess (>= 0.5, < 5.0)
+#12 0.308       rexml (~> 3.2, >= 3.2.5)
+#12 0.308       rubyzip (>= 1.2.2)
+#12 0.308     sidekiq (6.4.1)
+#12 0.308       connection_pool (>= 2.2.2)
+#12 0.308       rack (~> 2.0)
+#12 0.308       redis (>= 4.2.0)
+#12 0.308     sidekiq-scheduler (3.1.1)
+#12 0.308       e2mmap
+#12 0.308       redis (>= 3, < 5)
+#12 0.308       rufus-scheduler (~> 3.2)
+#12 0.308       sidekiq (>= 3)
+#12 0.308       thwait
+#12 0.308       tilt (>= 1.4.0)
+#12 0.308     spring (3.1.1)
+#12 0.308     sprockets (4.0.3)
+#12 0.308       concurrent-ruby (~> 1.0)
+#12 0.308       rack (> 1, < 3)
+#12 0.308     sprockets-rails (3.4.2)
+#12 0.308       actionpack (>= 5.2)
+#12 0.308       activesupport (>= 5.2)
+#12 0.308       sprockets (>= 3.0.0)
+#12 0.308     thor (1.2.1)
+#12 0.308     thwait (0.2.0)
+#12 0.308       e2mmap
+#12 0.308     tilt (2.0.10)
+#12 0.308     tzinfo (2.0.4)
+#12 0.308       concurrent-ruby (~> 1.0)
+#12 0.308     web-console (4.2.0)
+#12 0.308       actionview (>= 6.0.0)
+#12 0.308       activemodel (>= 6.0.0)
+#12 0.308       bindex (>= 0.4.0)
+#12 0.308       railties (>= 6.0.0)
+#12 0.308     webdrivers (5.0.0)
+#12 0.308       nokogiri (~> 1.6)
+#12 0.308       rubyzip (>= 1.3.0)
+#12 0.308       selenium-webdriver (~> 4.0)
+#12 0.308     websocket-driver (0.7.5)
+#12 0.308       websocket-extensions (>= 0.1.0)
+#12 0.308     websocket-extensions (0.1.5)
+#12 0.308     xpath (3.2.0)
+#12 0.308       nokogiri (~> 1.8)
+#12 0.308     zeitwerk (2.5.4)
+#12 0.308 
+#12 0.308 PLATFORMS
+#12 0.308   aarch64-linux
+#12 0.308   arm64-darwin-20
+#12 0.308   x86_64-linux
+#12 0.308 
+#12 0.308 DEPENDENCIES
+#12 0.308   bootsnap (>= 1.4.4)
+#12 0.308   bootstrap
+#12 0.308   byebug
+#12 0.308   capybara (>= 3.26)
+#12 0.308   dotenv-rails
+#12 0.308   httparty
+#12 0.308   jbuilder (~> 2.7)
+#12 0.308   listen (~> 3.3)
+#12 0.308   pg (~> 1.1)
+#12 0.308   puma (~> 5.0)
+#12 0.308   rack-mini-profiler (~> 2.0)
+#12 0.308   rails (~> 6.1.4, >= 6.1.4.4)
+#12 0.308   sass-rails (>= 6)
+#12 0.308   selenium-webdriver
+#12 0.308   sidekiq
+#12 0.308   sidekiq-scheduler
+#12 0.308   spring
+#12 0.308   tzinfo-data
+#12 0.308   web-console (>= 4.1.0)
+#12 0.308   webdrivers
+#12 0.308 
+#12 0.308 RUBY VERSION
+#12 0.308    ruby 3.0.4p208
+#12 0.308 
+#12 0.308 BUNDLED WITH
+#12 0.308    2.2.33
+#12 DONE 0.3s
+
+#13 [ 9/11] RUN ruby -e 'puts Gem::Platform.local.to_s'
+#13 sha256:8f7da44489cdbddc8a2f28e25da72c51dc104294d9959c7ba35d896492083ae8
+#13 0.202 aarch64-linux
+#13 DONE 0.2s
+
+#14 [10/11] COPY entrypoint.sh /usr/bin/
+#14 sha256:5566c121f47bd028c9143124941149317d04962818d75c28774b329547b4f5c6
+#14 DONE 0.0s
+
+#15 [11/11] RUN chmod +x /usr/bin/entrypoint.sh
+#15 sha256:6d2bf03cc283d30da9bfd90814513d106bbbf40bbf16ac91d8ee6b4c25497d97
+#15 DONE 0.2s
+
+#16 exporting to image
+#16 sha256:e8c613e07b0b7ff33893b694f7759a10d42e180f2b4dc349fb57dc6b71dcab00
+#16 exporting layers
+#16 exporting layers 1.0s done
+#16 writing image sha256:39fae412e46f3395296865911ade579195907387563f3503e85e6f154d2c77c8 done
+#16 naming to docker.io/library/meter_puma done
+#16 DONE 1.0s
+
+Use 'docker scan' to run Snyk tests against images to find vulnerabilities and learn how to fix them
