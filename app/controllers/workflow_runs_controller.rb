@@ -3,6 +3,7 @@ class WorkflowRunsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   # GET /workflow_runs or /workflow_runs.json
+    
   def index
     @workflow_runs = WorkflowRun.all
   end

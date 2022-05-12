@@ -7,10 +7,12 @@ services:
       - postgres-data:/var/lib/postgresql/data 
     ports:
       - "5432:5432"
-    environment:
-      POSTGRES_PASSWORD: admin
+    env_file: 
+      - ".env"
   web:
     container_name: puma
+    stdin_open: true
+    tty: true
     build: 
       context: .
       dockerfile: Dockerfile
