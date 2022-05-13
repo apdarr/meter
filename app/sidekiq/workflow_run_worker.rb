@@ -4,7 +4,8 @@ class WorkflowRunWorker
 
   def perform(workflow_run_params)
     # The ID of the workflow itself 
-    workflow_id = workflow_run_params.dig("workflow", "id")
+    workflow_id = workflow_run_params.dig("workflow_run", "id")
+    byebug
     # If the WorkflowRun doesn't exist, create a new record in the database
     if !WorkflowRun.exists?(workflow_id: workflow_id)
       # Name of workflow
